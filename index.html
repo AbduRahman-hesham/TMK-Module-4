@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bond Master</title>
+    <meta name="description" content="A fun and educational card-matching game teaching kids the fundamentals of bonds, yield, and interest rates." />
+    <meta property="og:title" content="Bond Master" />
+    <meta property="og:description" content="A fun and educational card-matching game teaching kids the fundamentals of bonds, yield, and interest rates." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700&family=Fredoka:wght@400;500;600;700&family=Tajawal:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Mute Toggle (min 44x44px) -->
+      <button id="mute-btn" class="mute-btn" type="button" aria-label="Toggle sound">🔊</button>
+
+      <!-- Background Decorative Shapes (CSS only, max 6) -->
+      <div class="bg-drifting-elements" aria-hidden="true">
+        <div class="drift-item drift-cloud-1">☁️</div>
+        <div class="drift-item drift-star-1">⭐</div>
+        <div class="drift-item drift-coin-1">🪙</div>
+        <div class="drift-item drift-cloud-2">☁️</div>
+        <div class="drift-item drift-star-2">⭐</div>
+        <div class="drift-item drift-coin-2">🪙</div>
+      </div>
+
+      <!-- 1. START SCREEN: PICK YOUR HERO -->
+      <section id="start-screen" class="screen">
+        <button id="start-lang-btn" class="lang-btn lang-btn-start" type="button"></button>
+        <h1 class="start-title">
+          <span id="start-title-text"></span>
+          <span aria-hidden="true">🏆</span>
+        </h1>
+        <p id="start-subtitle" class="start-subtitle"></p>
+        <div id="hero-select-row" class="hero-select-row"></div>
+      </section>
+
+      <!-- 2. GAMEPLAY VIEW: TOP BAR, HERO & BOARD -->
+      <main id="game-screen" class="screen hidden">
+        <header class="top-bar">
+          <div id="stage-dots" class="stage-dots-group"></div>
+          <div id="pair-pips" class="pair-pips-group"></div>
+          <button id="topbar-lang-btn" class="lang-btn lang-btn-topbar" type="button"></button>
+        </header>
+
+        <div class="game-playfield">
+          <div class="hero-box-wrap">
+            <div id="hero-box" class="hero-box"></div>
+          </div>
+          <div id="board-container" class="board-container"></div>
+        </div>
+      </main>
+
+      <!-- 3. STAGE BANNER MODAL (1.5s) -->
+      <div id="stage-banner" class="stage-banner-overlay hidden" role="dialog" aria-modal="true">
+        <div class="stage-banner-box">
+          <div id="stage-banner-emoji" class="stage-banner-emoji"></div>
+          <h2 id="stage-banner-title" class="stage-banner-title"></h2>
+          <div id="stage-banner-hint" class="stage-banner-hint"></div>
+        </div>
+      </div>
+
+      <!-- 4. STAGE COMPLETE MODAL -->
+      <div id="stage-complete-modal" class="stage-banner-overlay hidden" role="dialog" aria-modal="true">
+        <div class="stage-complete-box">
+          <div class="stage-star-icon" aria-hidden="true">⭐</div>
+          <h2 id="stage-complete-title" class="stage-complete-title"></h2>
+          <div id="stage-recap-text" class="stage-recap-text"></div>
+          <button id="next-stage-btn" class="game-btn game-btn-sun" type="button"></button>
+        </div>
+      </div>
+
+      <!-- 5. FINAL SCREEN: VICTORY -->
+      <section id="victory-screen" class="screen hidden">
+        <div class="victory-card">
+          <div class="victory-crown-wrap">
+            <span class="victory-crown" aria-hidden="true">👑</span>
+            <div id="victory-hero-box" class="victory-hero-wrap"></div>
+          </div>
+          <h1 id="victory-title" class="victory-title"></h1>
+          <p id="victory-sub" class="victory-sub"></p>
+          <button id="play-again-btn" class="game-btn game-btn-pink" type="button"></button>
+        </div>
+      </section>
+
+      <!-- 6. LANDSCAPE PHONE OVERLAY -->
+      <div id="rotate-overlay" class="rotate-overlay" aria-live="polite">
+        <div class="rotate-box">
+          <div class="rotate-icon" aria-hidden="true">📱</div>
+          <h2 id="rotate-title" class="rotate-title"></h2>
+          <p id="rotate-sub" class="rotate-sub"></p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/game.js"></script>
+  </body>
+</html>

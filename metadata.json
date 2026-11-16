@@ -1,0 +1,6 @@
+{
+  "name": "Bond Master",
+  "description": "A fun and educational card-matching game teaching kids the fundamentals of bonds, yield, and interest rates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
